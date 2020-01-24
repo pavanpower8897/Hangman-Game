@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="App.js"></script>
+</head>
+<body ng-app="HangmanApp" ng-controller="GameController">
+	<div>
+		<div>
+			Guesses Left: {{guesses}}
+		</div>
+		<div>
+			Your Incorrect Guesses::
+			<span ng-repeat="letter in incorrectLettersChosen">
+				{{letter}}
+			</span>
+		</div>
+		<div>
+			Your correct Guesses::
+			<span ng-repeat="letter in correctLettersChosen">
+				{{letter}}
+			</span>
+		</div>
+				<div>You Have to guess: {{displayWord}}</div>
+		<div>
+			<input type="text" ng-model="input.letter">
+			<button ng-click="choosenLetter()">Submit</button>
+		</div>
+	</div>
+</body>
+</html>
